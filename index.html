@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ami Coding Pari Na</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Welcome to Ami Coding Pari Na</h1>
+
+    <!-- Home Page Section -->  
+<div id="home-section">  
+    <h2>Home Page</h2>  
+    <p>You are currently on the home page.</p>  
+</div>  
+
+<!-- User Authentication/Registration Section -->  
+<div id="auth-section">  
+    <h2>User Registration</h2>  
+    <form id="register-form">  
+        <label for="username">Username:</label>  
+        <input type="text" id="username" required>  
+        <br>  
+        <label for="email">Email:</label>  
+        <input type="email" id="email" required>  
+        <br>  
+        <label for="password">Password:</label>  
+        <input type="password" id="password" required>  
+        <br>  
+        <button type="submit">Register</button>  
+    </form>  
+
+    <h2>User Login</h2>  
+    <form id="login-form">  
+        <label for="login-username">Username:</label>  
+        <input type="text" id="login-username" required>  
+        <br>  
+        <label for="login-password">Password:</label>  
+        <input type="password" id="login-password" required>  
+        <br>  
+        <button type="submit">Login</button>  
+    </form>  
+</div>  
+
+<!-- Khoj the Search Section -->  
+<div id="khoj-section">  
+    <h2>Khoj the Search</h2>  
+    <form id="khoj-form">  
+        <label for="input-values">Input Values (comma-separated integers):</label>  
+        <input type="text" id="input-values" required>  
+        <br>  
+        <label for="search-value">Search Value (integer):</label>  
+        <input type="number" id="search-value" required>  
+        <br>  
+        <button type="submit">Khoj</button>  
+    </form>  
+    <div id="khoj-result"></div>  
+</div>  
+
+<script src="js/main.js"></script>  
+<script>  
+<!-- Home Page Section -->  
+<div id="home-section">  
+    <h2>Home Page</h2>  
+    <p>You are currently on the home page.</p>  
+</div>  
+
+<!-- User Authentication/Registration Section -->  
+<div id="auth-section">  
+    <h2>User Registration</h2>  
+    <form id="register-form">  
+        <label for="username">Username:</label>  
+        <input type="text" id="username" required>  
+        <br>  
+        <label for="email">Email:</label>  
+        <input type="email" id="email" required>  
+        <br>  
+        <label for="password">Password:</label>  
+        <input type="password" id="password" required>  
+        <br>  
+        <button type="submit">Register</button>  
+    </form>  
+
+    <h2>User Login</h2>  
+    <form id="login-form">  
+        <label for="login-username">Username:</label>  
+        <input type="text" id="login-username" required>  
+        <br>  
+        <label for="login-password">Password:</label>  
+        <input type="password" id="login-password" required>  
+        <br>  
+        <button type="submit">Login</button>  
+    </form>  
+</div>  
+
+<!-- Khoj the Search Section -->  
+<div id="khoj-section">  
+    <h2>Khoj the Search</h2>  
+    <form id="khoj-form">  
+        <label for="input-values">Input Values (comma-separated integers):</label>  
+        <input type="text" id="input-values" required>  
+        <br>  
+        <label for="search-value">Search Value (integer):</label>  
+        <input type="number" id="search-value" required>  
+        <br>  
+        <button type="submit">Khoj</button>  
+    </form>  
+    <div id="khoj-result"></div>  
+</div>  
+
+<script src="js/main.js"></script>  
+<script>  
+    // Show/hide sections based on user login state  
+    function showSection(section) {  
+        var homeSection = document.getElementById('home-section');  
+        var authSection = document.getElementById('auth-section');  
+        var khojSection = document.getElementById('khoj-section');  
+
+        switch(section) {  
+            case 'home':  
+                homeSection.style.display = 'block';  
+                authSection.style.display = 'none';  
+                khojSection.style.display = 'none';  
+                break;  
+            case 'auth':  
+                homeSection.style.display = 'none';  
+                authSection.style.display = 'block';  
+                khojSection.style.display = 'none';  
+                break;  
+            case 'khoj':  
+                homeSection.style.display = 'none';  
+                authSection.style.display = 'none';  
+                khojSection.style.display = 'block';  
+                break;  
+            default:  
+                homeSection.style.display = 'block';  
+                authSection.style.display = 'none';  
+                khojSection.style.display = 'none';  
+                break;  
+        }  
+    }  
+
+    // Check if user is logged in and show appropriate section  
+    function checkLogin() {  
+        var isLoggedIn = false; // Replace with actual login check  
+
+        if(isLoggedIn) {  
+            showSection('khoj');  
+        } else {  
+            showSection('auth');  
+        }  
+    }  
+
+    // Call checkLogin on page load  
+   
+window.onload = function() {
+checkLogin();
+}
+
+    // Bind form submission events  
+    document.getElementById('register-form').onsubmit = function(event) {  
+        event.preventDefault();  
+        // Handle form submission here  
+    };  
+
+    document.getElementById('login-form').onsubmit = function(event) {  
+        event.preventDefault();  
+        // Handle form submission here  
+        // If login is successful, call showSection('khoj');  
+    };  
+
+    document.getElementById('khoj-form').onsubmit = function(event) {  
+        event.preventDefault();  
+        // Handle form submission here  
+    };  
+</script>  
+</body>
+</html>
