@@ -8,6 +8,6 @@ ami_coding_pari_na/<br />
 │   └── database.py<br />
 ├── frontend/<br />
 │   ├── index.html<br />
-│   └── main.js<br />
+└─  └── main.js<br />
 
 
